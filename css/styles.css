@@ -280,7 +280,27 @@ a.custom-card:hover {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 500px) {
+.list-group-item img {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 95%;
+  height: auto;
+ 
+}
 
+
+}
+
+@media only screen and (max-width: 780px) {
+  
+  
+  .list-group-item .d-flex {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+}
 
 
 
