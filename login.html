@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Inicio de sesión</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href='css/estilo-login.css'>
+    <script src='js/login.js'></script>
+</head>
+
+<body>
+
+  <img id='logo' src="img/login.png">
+
+  <div>
+   <fieldset> 
+     
+      <div id='bienvenida'>
+        <h1>¡TE DAMOS LA BIENVENIDA!</h1><br>
+        <p>Ingresa a tu cuenta para acceder al sitio.</p><br><br><br>
+      </div>
+
+      <div id='casilleros'>
+        <label for="exampleInputEmail1" class="titulos">Nombre de usuario</label>
+        <input type='email' class="form-control" id="usuario" placeholder="Usuario" required>
+        <br>
+        <label for="exampleInputPassword1" class="titulos">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña" placeholder="Constraseña" required>
+        <br><br>
+        <button type="submit" class="form-control" id='boton' onclick="irAInicio()">Iniciar Sesión</button>
+      </div>
+
+    </fieldset>
+  </div>
+
+</body>

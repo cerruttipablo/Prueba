@@ -1,0 +1,171 @@
+
+<head>
+ <link rel="stylesheet" href="tilos.css">
+ <meta name="viewport" content="width= device-width, initial-scale=1.0">
+</head>
+
+
+
+<body>
+<!--
+<input type="checkbox" id='boton-modal'>
+<label for="boton-modal" class='label-modal'> boton</label>
+    <div class='modal'>
+        
+       <div class="contenedor">
+           <header>Binvenido</header>
+           <label for="boton-modal">X</label>
+           <div>kdkdkdkd</div>
+       </div> 
+
+
+    </div>
+    
+
+    <input id='aa' type="text" onkeyup="cambio()">
+
+-->
+<div>
+    
+</div>
+
+<div id='mi-perfil' style="text-align: center;">
+    <a href="https://ibb.co/s1ktMm6"><img style="border-radius:50%; width: 250px; height: 250px; top: 20px; justify-content: center;" src="https://i.ibb.co/rpTv17c/Sin-t-tulo.jpg" alt="Sin-t-tulo" border="1"></a>
+    <!--img style="width: 200px; height: 250px; top: 20px; justify-content: center;"-->
+    <div id="campos1" style="display: flex;">
+    <div style='margin-right: 30px'>
+        <label></label><br>
+        <input type="text" class='sin-borde' placeholder="Usuario" id='nombre'>
+    </div>
+    <div>
+        <label></label><br>
+        <input type="text" class='sin-borde' placeholder="Cotraseña" id='apellido'>
+    </div>
+</div>
+<div id='campos2' style="display: flex; margin-bottom:30px">
+    <div style='margin-right: 30px'>
+        <label></label><br>
+        <input type="text" class='sin-borde' placeholder="Email" id='correo'>
+    </div>
+    <div>
+        <label></label><br>
+        <input type="text" class='sin-borde' placeholder="Ciudad" id= 'tel'>
+    </div>
+</div>
+
+<button onclick='guardar()'>Guardar</button>
+<button onclick='borrar()'>Borrar</button>
+
+</div>
+</body>
+
+<script>
+    obj = localStorage.getItem('datosusuario');
+    var array = document.getElementsByTagName('input');
+    
+    if (obj != null) {
+    var uu = JSON.parse(localStorage.getItem('datosusuario'));
+
+    document.getElementById('nombre').value = uu.nombre;
+    document.getElementById('apellido').value = uu.apellido;
+    document.getElementById('correo').value = uu.correo;
+    document.getElementById('tel').value = uu.telefono;  
+   
+}
+
+
+    
+    
+    
+
+    
+
+   /* for (let element of array) {
+        if (element.value ==''){
+                element.setAttribute('placeholder', 'iiii')
+            }
+    }*/
+
+
+    function borrar() {
+        
+        localStorage.clear();
+        for (let element of array) {
+                element.value='';
+            }
+    }
+
+var usuario = '';
+    function guardar() {
+            
+
+            usuario = {
+                nombre: array[0].value,
+                apellido: array[1].value,
+                correo: array[2].value,
+                telefono: array[3].value,
+            }
+
+            strin = JSON.stringify(usuario);
+            localStorage.setItem('datosusuario', strin);
+}
+        
+    
+    
+    
+    var guardo = '';
+    var i=0;
+        function cambio() {
+            texto = document.getElementById('aa').value;
+    
+           /* for (i=0; i <texto.length; i+=2){
+            
+                if (texto.length == 2*i){
+                guardo = texto + '-';
+                //alert(guardo)
+                document.getElementById('aa').value = guardo;
+            }*/
+            if (texto.length == 2) {
+                guardo = texto + '-';
+                document.getElementById('aa').value = guardo;
+                i=2;
+            }
+            //alert(guardo.length)
+            if (texto.length == 2*i+1 && i>=2) {
+                guardo = texto+ '-'
+                document.getElementById('aa').value = guardo;
+                i+=1;
+            }
+        }
+    
+
+    
+       
+        
+        /*var array = {}
+        var uu = localStorage.setItem('nom', array[0].value)
+            
+            
+         function guardar() {
+            var array = document.getElementsByTagName('input');
+            if (array[0].value != '') {
+    
+                uu = localStorage.setItem('nom', )
+                document.getElementById('nombre') = uu;
+            }
+            array = document.getElementsByTagName('input');
+            objeto = {nomb:'papa', apelli:'uiui'};
+            alert(objeto.nomb)
+    
+            for (let element of array) {
+                alert(element.value);
+                //localStorage.setItem()
+                Object.defineProperty(objeto, 'nombre', element.value)
+                alert(objeto.nombre)
+            }
+            */
+    
+    
+        
+        
+    </script>
