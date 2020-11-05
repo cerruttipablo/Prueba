@@ -292,16 +292,6 @@ a.custom-card:hover {
 
 }
 
-@media only screen and (max-width: 780px) {
-  
-  
-  .list-group-item .d-flex {
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-
-}
-
 @media screen and (max-width: 1000px) {
 
  body {
